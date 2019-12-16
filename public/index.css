@@ -1,0 +1,25 @@
+.nav-wrapper {
+    padding: 0 2rem;
+}
+
+.price {
+    font-size: 2rem;
+}
+
+.card-image {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.course {
+    text-align: center;
+}
+
+.card-action.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
