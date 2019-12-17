@@ -15,8 +15,7 @@ if (card) {
             fetch('/card/remove/' + id, {
                 method: 'delete'
             }).then(res => res.json())
-                .then(course => {
-                    console.log(course);
+                .then(card => {
                     window.location.reload();
                 })
         }
