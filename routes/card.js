@@ -16,9 +16,16 @@ router.get('/', async (req, res) => {
 
 router.post('/add', async (req, res) => {
     const course = await Course.getById(req.body.id);
-    await Card.add(course);
 
+    await Card.add(course);
     res.redirect('/card');
+});
+
+router.delete('/remove/:id', async (req, res) => {
+    const id = req.params.id;
+
+    const card = await Card.remove(id);
+    res.status(200).json(card);
 });
 
 module.exports = router;

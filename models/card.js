@@ -28,6 +28,27 @@ class Card {
         })
     }
 
+    static async remove(courseId) {
+        const card = await Card.fetch();
+        const index = card.courses.findIndex(el => el.id === courseId);
+        const candidate = card.courses[index];
+
+        if(candidate.count === 1) {
+            card.courses.splice(index, 1);
+        } else {
+            candidate.count--;
+        }
+
+        card.price -= candidate.price;
+
+        return new Promise((resolve, reject) => {
+            fs.writeFile(p, JSON.stringify(card), 'utf-8', (err, content) => {
+                if(err) reject(err);
+                else resolve(JSON.stringify(candidate));
+            })
+        })
+    }
+
     static async fetch() {
         return new Promise((resolve, reject) => {
             fs.readFile(p, 'utf-8', (err, content) => {
