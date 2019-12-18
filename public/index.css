@@ -17,6 +17,10 @@
     text-align: center;
 }
 
+.course img {
+    max-width: 300px;
+}
+
 .card-action.actions {
     display: flex;
     align-items: center;
@@ -26,4 +30,16 @@
 
 .course-form {
     margin-bottom: 2rem;
+}
+
+.tabs {
+    margin-top: 1rem;
+}
+
+.alert {
+    border-radius: 1px;
+    color: #fff;
+    background: #ee6e73;
+    padding: 10px;
+    margin: 10px auto;
 }

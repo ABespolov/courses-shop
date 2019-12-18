@@ -1,12 +1,17 @@
 <nav>
     <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Courses App</a>
+        <a href="/" class="brand-logo">Courses Shop</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li class={{ isHome }}><a href="/">Главная</a></li>
             <li class={{ isCourses }}><a href="/courses">Курсы</a></li>
-            <li class={{ isAdd }}><a href="/add">Добавить курс</a></li>
-            <li class={{ isCard }}><a href="/card">Корзина</a></li>
-            <li class={{ isOrders }}><a href="/orders">Заказы</a></li>
+            {{#if isAuth}}
+                <li class={{ isAdd }}><a href="/add">Добавить курс</a></li>
+                <li class={{ isCard }}><a href="/card">Корзина</a></li>
+                <li class={{ isOrders }}><a href="/orders">Заказы</a></li>
+                <li class={{ isLogin }}><a href="/auth/logout">Выйти</a></li>
+            {{else}}
+                <li class={{ isLogin }}><a href="/auth/login#login">Войти</a></li>
+            {{/if}}
         </ul>
     </div>
 </nav>
