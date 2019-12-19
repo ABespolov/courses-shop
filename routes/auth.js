@@ -67,7 +67,7 @@ router.post('/register', registerValidators, async (req, res) => {
         const errors = validationResult(req);
 
         if (!errors.isEmpty()) {
-            req.flash('registerError', errors.mapped()[0].msg());
+            req.flash('registerError', errors);
             return res.status(422).redirect('/auth/login#register');
         }
 
