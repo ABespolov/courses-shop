@@ -43,3 +43,11 @@
     padding: 10px;
     margin: 10px auto;
 }
+
+.error404 {
+    text-align: center;
+}
+
+.error404 img {
+    max-width: 300px;
+}

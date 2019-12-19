@@ -17,6 +17,7 @@ const addRoutes = require('./routes/add');
 const cardRoutes = require('./routes/card');
 const ordersRoutes = require('./routes/orders');
 const authRoutes = require('./routes/auth');
+const errorHandler = require('./middleware/error');
 
 const app = express();
 const hbs = exphbs.create({
@@ -55,6 +56,7 @@ app.use('/add', addRoutes);
 app.use('/card', cardRoutes);
 app.use('/orders', ordersRoutes);
 app.use('/auth', authRoutes);
+app.use(errorHandler);
 
 async function start() {
     const port = process.env.PORT || 3000;
